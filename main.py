@@ -1,16 +1,17 @@
 import sys
+import os
+
+if getattr(sys, 'frozen', False):
+    sys.path.insert(0, sys._MEIPASS)
+else:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from PyQt5.QtWidgets import QApplication
 from crypto_manager import CryptoManager
 from config_manager import ConfigManager
 from gui.login_window import LoginWindow
 from gui.main_window import MainWindow
 
-
-import os
-
-
-if getattr(sys, 'frozen', False):
-    os.chdir(sys._MEIPASS)
 
 
 def main():
