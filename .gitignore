@@ -1,0 +1,9 @@
+.idea/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+dist/
+build/
+*.spec
+~/.password_vault/
