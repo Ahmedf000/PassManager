@@ -6,6 +6,13 @@ from gui.login_window import LoginWindow
 from gui.main_window import MainWindow
 
 
+import os
+
+
+if getattr(sys, 'frozen', False):
+    os.chdir(sys._MEIPASS)
+
+
 def main():
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
