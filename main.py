@@ -2,16 +2,19 @@ import sys
 import os
 
 if getattr(sys, 'frozen', False):
-    sys.path.insert(0, sys._MEIPASS)
+    BASE_DIR = sys._MEIPASS
 else:
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+sys.path.insert(0, BASE_DIR)
+
+os.chdir(BASE_DIR)
 
 from PyQt5.QtWidgets import QApplication
 from crypto_manager import CryptoManager
 from config_manager import ConfigManager
 from gui.login_window import LoginWindow
 from gui.main_window import MainWindow
-
 
 
 def main():
